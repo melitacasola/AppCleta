@@ -1,0 +1,47 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Autores - contanos sobre vos!</h1>
+
+    
+    {% if miFormulario.errors %}
+
+        <p>ERROOOOOR!!!!!!!!!!!!!!</p>
+
+    {% endif %}
+
+
+    <form action=" " method="POST">{% csrf_token %}
+
+    <table>
+
+        {{  miFormulario.as_table   }}
+
+    </table>
+
+    <input type="submit" value="ENVIAR!!!!">
+    
+    <br>
+    <br>
+
+    
+    <a href="verautores"> Ver nuestra Comunidad! </a>
+
+   
+
+    <br>
+    <br>
+    
+    
+    <a href="busquedaAutor"> Buscar en nuestra Comunidad! </a>
+    
+
+
+</form>
+
+
+
+{% endblock %}

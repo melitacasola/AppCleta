@@ -1,0 +1,28 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+    
+        <h1 class="mb-1"> Agregá o Edita INFO de Rutas </h1>
+
+        {% if miFormulario.errors %}
+
+            <p>ERROOOOOR!!!!!!!!!!!!!!</p>
+        {% endif %}
+
+        <form action="" method="POST">{% csrf_token %}
+            
+            <table>
+
+            {{  miFormulario.as_table    }}
+
+            </table>
+
+            <input type="submit" value="EDITAAAR!!!!">
+            
+        </form>
+    
+    
+    
+    {% endblock  %}

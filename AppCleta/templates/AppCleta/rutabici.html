@@ -1,0 +1,39 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+    
+    <h1 class="mb-1">Rutas en Bicicleta</h1>
+    <h2 class="mb-1">Compartinos y agregá nuevos destinos para conocer y recorrer Córdoba en Bicicleta</h2>
+
+    
+        {% if miFormulario.errors %}
+
+        <p>ERROOOOOR!!!!!!!!!!!!!!</p>
+        {% endif %}
+
+
+        <form action="" method="POST">{% csrf_token %}
+        
+            <table>
+
+                {{  miFormulario.as_table    }}
+
+            </table>
+
+            <input type="submit" value="ENVIAR!!!!">
+
+            <br>
+            <br>
+            <a href="verrutas"> Ver Rutas</a>
+
+            <br>
+            <br>
+            <a href="busquedaRuta"> Buscar tu proximo Destino! </a>
+        
+        </form>
+
+
+
+    {% endblock %}

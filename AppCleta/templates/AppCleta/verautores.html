@@ -1,0 +1,35 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+    <ul>
+        <p>
+        {% for a in autores %}
+
+            <li>{{a}}</li>
+        </p>   
+            <button>
+                <a href="{% url 'eliminarAutor' a.nombre %}"> Eliminar</a>
+                <a href="{% url 'editarAutor' a.nombre %}"> Editar </a>
+
+            </button>
+<br>
+<br>
+        {%endfor%}
+
+<br>
+<br>
+    </ul>
+    <button>
+    <a href="autor"> Agregar Autor</a>
+    </button>
+
+    <br>
+    <br>
+
+    
+
+    <a href="inicio"> INICIO </a>
+
+    {% endblock %}

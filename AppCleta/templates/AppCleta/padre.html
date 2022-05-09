@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{%load static%}
+
+		
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CLETAPEDIA para CODERHOUSE</title>
+		<!-- Bootstrap -->
+		{% comment %} <link href="{% static 'AppCleta/css/bootstrap.min.css'%}" rel="stylesheet"> {% endcomment %}
+		<link href="{% static 'AppCleta/css/styles.css'%}" rel="stylesheet">
+		{% comment %} <link href="{% static 'AppCleta/css/queries.css'%}" rel="stylesheet"> {% endcomment %}
+		{% comment %} <link rel="stylesheet" href="{% static 'AppCleta/css/flexslider.css'%}" type="text/css"> {% endcomment %}
+		{% comment %} <link rel="stylesheet" href="{% static 'AppCleta/css/animate.css'%}" type="text/css"> {% endcomment %}
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<nav>
+							
+							<ul class="clearfix">
+                                <li><a href="{% url 'Inicio' %}">Inicio</a></li>
+								<li><a href="{% url 'Nosotros' %}">Nosotros</a></li>
+								<li><a href="{% url 'RutaBici' %}">RutaBici</a></li>
+								<li><a href="{% url 'Autor' %}">Autor</a></li>
+
+								
+
+								<li><a href="{% url 'busquedaRuta' %}">BUSCAR</a></li>
+
+								{% if not request.user.is_authenticated %}
+								<li><a href="{% url 'login' %}">INGRESAR</a></li>
+								{% endif %}
+								
+								{% if request.user.is_authenticated %}
+                				<img src="{{url}}" style="height: 40px; width: 45px;" >
+                				<h3 class="text-muted small mb-4 mb-lg-0"> Hola, {{user.username}} </h3>
+                				{% endif %}
+								
+								<li><a href="{% url 'Logout' %}">Logout</a></li>
+																
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="hero"> </div>
+
+
+			
+			{%block contenidoQueCambia%}
+
+			...
+	
+			{% endblock %}
+
+
+		</header>	
+				
+		<footer id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 footer-leftcol">
+						
+					</div>
+					<div class="col-md-4 footer-midcol">
+						<ul>
+							<li><a href="https://twitter.com/intent/tweet" class="twitter-icon">Twitter</a></li>
+							<li><a href="https://www.facebook.com/" class="facebook-icon">Facebook</a></li>
+							<li><a href="https://ar.pinterest.com/" class="pintrest-icon">Pintrest</a></li>
+						</ul>
+						<ul class="list-inline mb-2">
+                            
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="{% url 'Nosotros' %}">About us</a></li>
+                      
+                        </ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-4 footer-rightcol">
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+	</body>
+</html>

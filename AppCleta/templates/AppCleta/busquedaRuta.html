@@ -1,0 +1,23 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia  %}
+
+    <h1 class="mb-1">BUSQUEDA RUTA!!</h1>
+
+    <h1>Busca tu proximo destino :)</h1>
+
+
+        <form action="/AppCleta/buscarRuta/" method="GET">
+
+            <input type="text" name="nombreRuta" id="nombreRuta">
+    
+            <input type="submit" value="BUSCAR!!!!">
+
+        </form>
+
+
+
+
+    {% endblock  %}

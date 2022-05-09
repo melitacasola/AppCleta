@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if miFormulario.errors %}
+
+    <p>ERROOOOOR!!!!!!!!!!!!!!</p>
+    {% endif %}
+
+
+    <form action="/AppCleta/formularioRuta" method="POST">{% csrf_token %}
+        <!--
+        <p>Direccion: <input type="text"  name="direccion">    </p>
+        <p>Año: <input type="number"  name="anioFund">    </p>
+        -->
+        <table>
+
+        {{  miFormulario.as_table    }}
+
+        </table>
+
+        <input type="submit" value="ENVIOOOO!!!!">
+    </form>
+</body>
+</html>

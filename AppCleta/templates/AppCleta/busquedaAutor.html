@@ -1,0 +1,30 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia  %}
+
+    <h1 class="mb-1">BUSQUEDA de Nuestros Autores!!</h1>
+
+    <h2>Aca podes encontrar las personas que participan en brindar 
+        información sobre destinos en Córdoba, y podes contactarlos para coordinar una salida en bici :)</h2>
+
+        <!--<form action="/AppCleta/resultadoAutor/" method="GET">
+
+            <input type="text" name="nombre" id="nombre">
+
+            <input type="submit" value="BUSCANOS"> -->
+
+        <form action="/AppCleta/buscarAutor/" method="GET">
+
+            <input type="text" name="nombre" id="nombre">
+        
+            <input type="submit" value="BUSCAR!!!!">
+    
+        </form>
+
+
+
+
+
+    {% endblock  %}

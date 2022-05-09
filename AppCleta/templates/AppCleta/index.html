@@ -1,0 +1,46 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+	{% block contenidoQueCambia %}
+	
+	<h1 class="mb-1">Bienvenides a CletaPedia Comunidad de Ciclistas!</h1>
+
+	<p>Bienvenides!!</p>
+
+<h3><p>Somos un grupo de personas reunidas para promover el uso de la bicicleta como vehículo de transporte,
+<br>	 
+mejorar la calidad de vida urbana y ayudar al cuidado del medio ambiente.
+<br> 
+Con el propósito de promover el uso de la bicicleta y defender el derecho de circulación del ciclista, 
+<br>
+y la pacificación del tránsito.
+</p>
+<br>
+<br>
+En Esta App Podes: 
+</h3>
+	
+	<a href="{% url 'Registro' %}">-Registrar Usuaruio Nuevo-</a> 
+	<br>
+	<br>
+	<a href="{% url 'login' %}">-Login-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Logout' %}">-Logout-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Nosotros' %}">-Nosotros-</a>
+	<br>
+	<br>
+	<a href="{% url 'verrutas' %}">-Ver Rutas para andar en Bici Cargadas por nuestra comunidad-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Autor' %}">-Autor (requiere Login)-</a>
+	<br>
+	<br>
+	<a href="{% url 'verautores' %}">-Autores-</a>   
+	<br>
+	<br>
+	  
+	{% endblock  %}

@@ -1,0 +1,31 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+
+        <h1 class="mb-1">BUSQUEDA de RUTAS!!!!!</h1>
+
+        <h1>Estamos buscando la ruta a: {{nombreRuta}}</h1>
+
+        {% if rutaBici %}
+
+            <ul>
+            {% for ruta in rutaBici %}
+
+                <li>Destino a: {{ruta.nombreRuta}} desde Córdoba Capital - </li> 
+                <li>Tipo de ruta: {{ruta.tipoRuta}} - </li> 
+                <li>Distancia: {{ruta.distancia}} km - </li> 
+                <li>Dificultad promedio:{{ruta.dificultad}} - </li> 
+                <li>Tiempo estimado: {{ruta.tiempo}} minutos - </li> 
+                <li>Comentario sobre la ruta o destino: {{ruta.comentario}}</li>
+
+            {% endfor %}
+            </ul>
+
+            
+
+        {% endif %}    
+    
+    
+    {% endblock  %}

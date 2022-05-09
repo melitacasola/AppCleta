@@ -1,0 +1,36 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+	{% block contenidoQueCambia %}
+	
+	<h1 class="mb-1">INICIO!!</h1>
+	En Esta App Podes: 
+</h3>
+	
+	<a href="{% url 'Registro' %}">-Registrar Usuaruio Nuevo-</a> 
+	<br>
+	<br>
+	<a href="{% url 'login' %}">-Login-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Logout' %}">-Logout-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Nosotros' %}">-Nosotros-</a>
+	<br>
+	<br>
+	<a href="{% url 'verrutas' %}">-Ver Rutas para andar en Bici Cargadas por nuestra comunidad-</a> 
+	<br>
+	<br>
+	<a href="{% url 'Autor' %}">-Autor (requiere Login)-</a>
+	<br>
+	<br>
+	<a href="{% url 'verautores' %}">-Autores-</a>   
+	<br>
+	<br>
+	  
+
+	<p>Bienvenides!!</p>
+	
+	{% endblock  %}

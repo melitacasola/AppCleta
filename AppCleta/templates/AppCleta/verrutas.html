@@ -1,0 +1,42 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+    <ul>
+        <h1 class="mb-1">NUESTRAS RUTAS!!!!!</h1>
+    
+        <p>
+        {% for r in rutas %}
+
+            <li>{{r}}</li>
+        
+        </p>
+            <button>
+                <a href="{% url 'eliminarRuta' r.nombreRuta %}"> Eliminar</a>
+                <a href="{% url 'editarRuta' r.nombreRuta %}"> Editar</a>
+            </button>
+    
+<br>    
+<br>
+    
+        {%endfor%}
+
+<br>
+<br>
+<br>
+    </ul>
+    <button>
+    <a href="rutabici"> Agregar otra Ruta</a>
+    </button>
+
+    <br>
+    <br>
+<br>
+<br>
+
+    
+    <a href="inicio"> INICIO </a>
+
+
+    {% endblock %}

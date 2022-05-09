@@ -1,0 +1,29 @@
+{% extends "AppCleta/padre.html" %}
+
+{% load static %}
+
+    {% block contenidoQueCambia %}
+
+        <h1 class="mb-1">BUSQUEDA de AUTORES!!!!!</h1>
+
+        <h1>Estamos buscando en nuestra comunidad a: {{nombre}}</h1>
+
+        {% if autor %}
+
+            <ul>
+            {% for a in autor %}
+
+                <li>Nombre: {{a.nombre}}  -| </li> 
+                <li>Edad: {{a.edad}} años -| </li> 
+                <li>Correo electronico: {{a.email}} CONTACTANOS! ;)</li> 
+                <li>De la Localidad de:{{a.localidad}}  - </li> 
+                <li>sobre nuestro autor: {{a.sobrevos}} - </li> 
+                <li>Creado el día: {{a.fecha}} hs.</li>
+
+            {% endfor %}
+            </ul>
+
+        {% endif %}       
+    
+    
+    {% endblock  %}

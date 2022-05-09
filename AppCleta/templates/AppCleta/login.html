@@ -1,0 +1,18 @@
+{% extends "AppCleta/padre.html" %}
+
+
+{% load static %}
+
+{% block contenidoQueCambia  %}
+
+    <form action="" method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit"> Iniciar Sesión</button>
+<br>
+
+Si no tienes usuario podes registrarte Aqui --->>
+<a href="{% url 'Registro' %}">-Registro-</a> 
+
+{% endblock  %}
+
