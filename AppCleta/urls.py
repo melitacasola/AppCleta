@@ -25,4 +25,5 @@ urlpatterns = [
     path('registro', views.register, name='Registro'),
     path('logout', LogoutView.as_view(template_name='AppCleta/logout.html'), name='Logout'),
     path('editarperfil',views.editarPerfil,name="EditarPerfil"),
+    path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
 ]

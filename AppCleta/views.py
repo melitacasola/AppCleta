@@ -6,7 +6,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from django.http import HttpResponse
 
 from AppCleta.models import Autor, RutaBici, Nosotros, Avatar
-from AppCleta.forms import FormularioRuta, FormularioAutor, UserRegisterForm, UserCreationForm, UserEditForm
+from AppCleta.forms import FormularioRuta, FormularioAutor, UserRegisterForm, UserCreationForm, UserEditForm, AvatarFormulario
 from django.views.generic import TemplateView
 
 from django.contrib.auth import login, logout, authenticate
@@ -15,6 +15,7 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -190,7 +191,7 @@ def editarRuta(request, ruta_nombre):
 
             ruta.save() #Es el que guarda en la BD
 
-        return render(request, 'AppCleta/rutabici.html')
+        return render(request, 'AppCleta/inicio.html')
 
     else:
 
@@ -294,7 +295,7 @@ def editarPerfil(request):
       
     if request.method == 'POST':
         miFormulario = UserEditForm(request.POST)
-        if miFormulario.is_valid: #si pasa la validación Django
+        if miFormulario.is_valid(): #si pasa la validación Django
                 informacion = miFormulario.cleaned_data
                   
                   #datos que modificaríamos
@@ -311,3 +312,26 @@ def editarPerfil(request):
       
       #voy al HTML que me permite editar
     return render(request, "AppCleta/editarPerfil.html", {"miFormulario": miFormulario, "usuario": usuario})
+
+@login_required
+def agregarAvatar(request):
+    if request.method == 'POST':
+
+        miFormulario = AvatarFormulario(request.POST, request.FILES)
+        
+        if miFormulario.is_valid():   #Si pasó la validación de Django
+
+
+            u = User.objects.get(username=request.user)
+                
+            avatar = Avatar (user=u, imagen=miFormulario.cleaned_data['imagen']) 
+      
+            avatar.save()
+
+            return render(request, "AppCleta/inicio.html") #Vuelvo al inicio o a donde quieran
+
+    else: 
+
+        miFormulario= AvatarFormulario() #Formulario vacio para construir el html
+
+    return render(request, "AppCleta/agregarAvatar.html", {"miFormulario":miFormulario})
