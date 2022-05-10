@@ -9,7 +9,7 @@ class Autor(models.Model):
     edad= models.IntegerField()
     email= models.EmailField(null=True)
     localidad=models.CharField(max_length=30)
-    sobrevos= models.TextField(null=True, max_length=2000)
+    sobrevos= models.CharField(null=True, max_length=2000)
     fecha=models.DateField(null=True)
     
     def __str__(self):
@@ -21,7 +21,7 @@ class RutaBici(models.Model):
     tipoRuta=models.CharField(max_length=30)
     distancia=models.FloatField()
     dificultad=models.CharField(max_length=10)
-    tiempo=models.IntegerField()
+    tiempo=models.TimeField()
     comentario=models.CharField(null=True, max_length=2000)
     
     def __str__(self):

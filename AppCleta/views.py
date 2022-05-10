@@ -154,7 +154,7 @@ def eliminarRuta(request, ruta_nombre):
     rutas = RutaBici.objects.all()
     contexto={"rutas": rutas}
     
-    return render(request, "AppCleta/verrutas.html", contexto)
+    return render(request, "AppCleta/rutabici.html", contexto)
 
 
 def eliminarAutor(request, autor_nombre):
@@ -164,7 +164,7 @@ def eliminarAutor(request, autor_nombre):
     autor = Autor.objects.all()
     contexto={"autor": autor}
     
-    return render(request, "AppCleta/verautores.html", contexto)
+    return render(request, "AppCleta/autor.html", contexto)
 
 
 def editarRuta(request, ruta_nombre): 
@@ -190,7 +190,7 @@ def editarRuta(request, ruta_nombre):
 
             ruta.save() #Es el que guarda en la BD
 
-        return render(request, 'AppCleta/inicio.html')
+        return render(request, 'AppCleta/rutabici.html')
 
     else:
 

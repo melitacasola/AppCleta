@@ -10,7 +10,7 @@ class FormularioRuta(forms.Form):
     tipoRuta=forms.CharField()
     distancia=forms.FloatField()
     dificultad=forms.CharField()
-    tiempo=forms.IntegerField()
+    tiempo=forms.TimeField()
     comentario= forms.CharField()
     
     
